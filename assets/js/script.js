@@ -44,11 +44,11 @@ let dental = [
 // mostrar primera y última atencion (primera posición y total - 1)
 
 function main() {
-    let infoRad = document.getElementById("atencionRad");
+    // let infoRad = document.getElementById("atencionRad");
     let infoTra = document.getElementById("atencionTra");
     let infoDen = document.getElementById("atencionDen");
 
-    infoRad.innerText = `Primera atención: ${radiologia[0].paciente} - ${radiologia[0].prevision} | Última atención: ${radiologia[radiologia.length - 1].paciente} - ${radiologia[radiologia.length - 1].prevision}`;
+    // infoRad.innerText = `Primera atención: ${radiologia[0].paciente} - ${radiologia[0].prevision} | Última atención: ${radiologia[radiologia.length - 1].paciente} - ${radiologia[radiologia.length - 1].prevision}`;
 
     infoTra.innerText = `Primera atención: ${traumatologia[0].paciente} - ${traumatologia[0].prevision} | Última atención: ${traumatologia[traumatologia.length - 1].paciente} - ${traumatologia[traumatologia.length - 1].prevision}`;
 
@@ -71,9 +71,12 @@ function copiaObjeto(objeto) {
 
 function listaRad(listado) {
 
+    let infoRad = document.getElementById("atencionRad");
     let copiaRad = copiaObjeto(listado);
     copiaRad.shift();
     copiaRad.pop();
+
+    infoRad.innerText = `Primera atención: ${copiaRad[0].paciente} - ${copiaRad[0].prevision} | Última atención: ${copiaRad[copiaRad.length - 1].paciente} - ${copiaRad[copiaRad.length - 1].prevision}`;
 
     let atenRad = document.getElementById("totalRad");
     atenRad.innerText = `Cantidad de atenciones: ${copiaRad.length}`;
